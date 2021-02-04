@@ -110,6 +110,7 @@
     </Button>
     <Button
         android:id="@+id/multiButtonID"
+        android:onClick="operatorFunction"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -162,6 +163,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="-"
+        android:onClick="operatorFunction"
         android:textStyle="bold"
         android:textSize="50dp">
     </Button>
@@ -211,6 +213,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="+"
+        android:onClick="operatorFunction"
         android:textStyle="bold"
         android:textSize="50dp">
     </Button>
@@ -227,6 +230,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="/"
+        android:onClick="operatorFunction"
         android:layout_marginRight="5dp"
         android:textStyle="bold"
         android:textSize="50dp">

@@ -15,4 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void digitFunction(View view) {
     }
+
+    public void operatorFunction(View view) {
+    }
 }
