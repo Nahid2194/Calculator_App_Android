@@ -45,6 +45,7 @@
     </Button>
     <Button
         android:layout_width="0dp"
+        android:onClick="ceFunction"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="CE"
@@ -54,6 +55,7 @@
     </Button>
     <Button
         android:layout_width="0dp"
+        android:onClick="clearFunction"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="C"
@@ -248,6 +250,7 @@
     </Button>
     <Button
         android:id="@+id/pointButtonID"
+        android:onClick="pointFunction"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
