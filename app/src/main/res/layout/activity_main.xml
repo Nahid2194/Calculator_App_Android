@@ -37,6 +37,8 @@
     android:weightSum="4">
     <Button
         android:layout_width="0dp"
+        android:onClick="operatorFunction"
+        android:id="@+id/percentButtonId"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="%"
@@ -66,6 +68,7 @@
     </Button>
     <Button
         android:layout_width="0dp"
+        android:onClick="deleteFunction"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="D"
@@ -249,17 +252,18 @@
         android:textStyle="bold"
         android:textSize="50dp">
     </Button>
+
     <Button
         android:id="@+id/pointButtonID"
-        android:onClick="pointFunction"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="."
         android:layout_marginRight="5dp"
-        android:textStyle="bold"
-        android:textSize="50dp">
-    </Button>
+        android:layout_weight="1"
+        android:onClick="pointFunction"
+        android:text="."
+        android:textSize="50dp"
+        android:textStyle="bold"></Button>
+
     <Button
         android:id="@+id/resultButtonID"
         android:onClick="resultFunction"

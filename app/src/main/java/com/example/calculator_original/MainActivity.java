@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             if(secondvalue.equals("0")){
                 secondview.setText("0");
             }else{
-                secondview.setText(secondvalue+"");
+                secondview.setText(secondvalue+"0");
             }
         }
         else if(view.getId()==R.id.oneButtonID){
@@ -104,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
             operator = "-";
         }else if(view.getId()==R.id.multiButtonID){
             operator = "*";
-        }else {
+        }else if(view.getId()==R.id.percentButtonId){
+            operator = "%";
+        } else {
             operator = "/";
         }
         firstview.setText(secondvalue+""+operator);
@@ -112,8 +114,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pointFunction(View view) {
-        secondvalue = secondview.getText().toString();
-        secondview.setText(secondvalue+".");
+//        secondvalue = secondview.getText().toString();
+//        int value = secondvalue.length()-1;
+//        if(secondvalue.substring(0,value).equals(".")){
+//        secondview.setText(secondvalue+"");
+//        }else{
+//        secondview.setText(secondvalue+".");
+//        }
+
+        String s = secondview.getText().toString();
+        boolean check = s.contains(".");
+        if (check){
+            secondview.setText(s+"");
+        }else{
+            secondview.setText(s+".");
+
+        }
+
     }
 
     public void clearFunction(View view) {
@@ -142,6 +159,13 @@ public class MainActivity extends AppCompatActivity {
         }
         firstview.setText(num1+" "+operator+" "+num2+" = "+" "+result);
         secondview.setText(""+result);
+
+    }
+
+    public void deleteFunction(View view) {
+        String s = secondview.getText().toString();
+        String end = s.substring(0, s.length() - 1);
+        secondview.setText(""+end);
 
     }
 }
