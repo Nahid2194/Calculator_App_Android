@@ -8,18 +8,20 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView firstview,secondview;
-    String secondvalue;
+    String secondvalue,operator;
+    double num1,num2,result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         firstview = findViewById(R.id.firstTextView);
         secondview = findViewById(R.id.secondTextView);
+
     }
 
     public void digitFunction(View view) {
         secondvalue = secondview.getText().toString();
-        secondview.setText("0");
         if(view.getId()==R.id.zeroButtonID){
             if(secondvalue.equals("0")){
                 secondview.setText("0");
@@ -93,6 +95,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void operatorFunction(View view) {
+        secondvalue = secondview.getText().toString();
+        num1 = Double.parseDouble(secondvalue);
+        if(view.getId()== R.id.addButtonID){
+            operator = "+";
+
+        }else if(view.getId()==R.id.subButtonID){
+            operator = "-";
+        }else if(view.getId()==R.id.multiButtonID){
+            operator = "*";
+        }else {
+            operator = "/";
+        }
     }
 
     public void pointFunction(View view) {
@@ -101,11 +115,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clearFunction(View view) {
+        secondview.setText("0");
         firstview.setText("");
-        secondview.setText("");
+
     }
 
     public void ceFunction(View view) {
-        secondview.setText("");
+
+        secondview.setText("0");
     }
 }
