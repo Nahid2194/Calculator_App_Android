@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
         }else {
             operator = "/";
         }
+        firstview.setText(secondvalue+""+operator);
+        secondview.setText("0");
     }
 
     public void pointFunction(View view) {
@@ -117,11 +119,29 @@ public class MainActivity extends AppCompatActivity {
     public void clearFunction(View view) {
         secondview.setText("0");
         firstview.setText("");
+        num1=0;
+        num2=0;
 
     }
 
     public void ceFunction(View view) {
 
         secondview.setText("0");
+    }
+
+    public void resultFunction(View view) {
+        num2 = Double.parseDouble(secondview.getText().toString());
+        if(operator.equals("+")){
+            result=num1+num2;
+        }else if(operator.equals("-")){
+            result=num1-num2;
+        }else if (operator.equals("*")){
+            result=num1*num2;
+        }else if (operator.equals("/")){
+            result=num1/num2;
+        }
+        firstview.setText(num1+" "+operator+" "+num2+" = "+" "+result);
+        secondview.setText(""+result);
+
     }
 }
